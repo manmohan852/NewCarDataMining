@@ -11,11 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import javax.sound.midi.Soundbank;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 
 @SpringBootApplication
 @EnableMongoRepositories

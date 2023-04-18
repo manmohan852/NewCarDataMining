@@ -1,11 +1,6 @@
 package com.example.newCar.demo.parseDto;
 
-import com.example.newCar.demo.parseDto.feature.FeatureDto;
-import com.example.newCar.demo.parseDto.images.CarImagesDto;
-import com.example.newCar.demo.parseDto.specification.SpecificationDto;
 import lombok.Data;
-
-import java.util.List;
 
 @Data
 public class CarDto {

@@ -22,6 +22,7 @@ public class RestApiController {
 
     @Autowired
     DataParseService dataParseService;
+
     @RequestMapping(path = AppConstants.TEST_URI, method = RequestMethod.GET,
             headers = "Accept=application/json", produces = "application/json")
     public ApiResponse doTest() {

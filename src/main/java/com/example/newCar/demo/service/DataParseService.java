@@ -1,7 +1,6 @@
 package com.example.newCar.demo.service;
 
 import com.example.newCar.demo.parseDto.CarDto;
-import com.example.newCar.demo.parseDto.CarDetailDto;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -29,7 +28,7 @@ public class DataParseService {
             for(Element elements1: elements){
                 for(Element elements2: elements1.getElementsByClass("right_block")){
                     carUrlList.add(elements2.select("a").attr("href"));
-                    System.out.println(elements2.select("a").attr("href"));
+//                    System.out.println(elements2.select("a").attr("href"));
                 }
             }
             pageCount++;
@@ -44,12 +43,10 @@ public class DataParseService {
         CarDto carDto = new CarDto();
         try{
             Document doc = Jsoup.connect(carUrl).get();
-//            Elements elements =
             Elements elements = doc.select("tbody.keySpecsBody tr");
             for(int i = 0; i < elements.size(); i++){
                 String key = elements.get(i).select("th").text();
-                String value = elements.get(i).select("td").text();
-//                System.out.println(key  + " ------ " + value);
+                String value = elements.get(i).select("td").text()
                 if(key.equals("Price")) {
                     carDto.setPrice(value);
                 }else if(key.equals("Fuel Type")){
@@ -75,10 +72,6 @@ public class DataParseService {
                 }
             }
 
-//            for(int i = 0; i < elements.size(); i++){
-//
-//            }
-//            System.out.println();
         }
         catch(Exception exception){
             System.out.println("Exception for url: "+ carUrl + " trace : "+ exception.getLocalizedMessage());

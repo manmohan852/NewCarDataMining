@@ -15,6 +15,7 @@ public class NewCarContentService {
 
     @Autowired
     NewCarRepository newCarRepository;
+
     @Autowired
     NewCarRepositoryDao newCarRepositoryDao;
 
